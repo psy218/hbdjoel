@@ -36,8 +36,10 @@ hbd_joel <- function(from_who) {
       from_who = from_who
     })
 
-  hbdjoel::data %>%
-  # data %>%
+  data = hbdjoel::data
+
+  # hbdjoel:::data %>%
+  data %>%
     filter(name %in% from_who) %>%
     group_by(name) %>%
     # mutate_at("msg", emo::ji_glue) %>%
