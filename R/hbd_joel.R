@@ -16,7 +16,8 @@ hbd_joel <- function(from_who) {
 
   # data containing birthday messages from everyone
   # load(here::here("R", "sysdata.rda"))
-  data(sysdata, envir = environment())
+  # data(sysdata, envir = environment())
+  # usethis::use_data(data, internal = TRUE)
 
   suppressWarnings(
     if(from_who == "everyone" ) {
@@ -29,7 +30,7 @@ hbd_joel <- function(from_who) {
       from_who = from_who
     })
 
-  data %>%
+  hbdjoel:::data %>%
     filter(name %in% from_who) %>%
     group_by(name) %>%
     # mutate_at("msg", emo::ji_glue) %>%
