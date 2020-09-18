@@ -27,7 +27,8 @@ hbd_joel <- function(from_who) {
   # data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
   # data(sysdata, envir = environment())
   # usethis::use_data(data, internal = TRUE)
-  data = hbdjoel::data
+  # data = hbdjoel::data
+  system.file("data", package = "hbdjoel")
 
   suppressWarnings(
     if(from_who == "everyone" ) {
