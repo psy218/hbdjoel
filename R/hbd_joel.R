@@ -16,7 +16,8 @@ hbd_joel <- function(from_who) {
 
   # data containing birthday messages from everyone
   # load(here::here("R", "sysdata.rda"))
-  data = here::here("data", "data.rda")
+  load(here::here("data", "data.rda"))
+  # data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
   # data(sysdata, envir = environment())
   # usethis::use_data(data, internal = TRUE)
 
