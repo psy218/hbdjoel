@@ -1,3 +1,7 @@
+.onLoad <- function(libname, pkgname) {
+  data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
+}
+
 #' @description turning texts into utf8 code to be printed as emojis.
 emoji_transform = function(text) {
 
@@ -16,7 +20,7 @@ hbd_joel <- function(from_who) {
 
   # data containing birthday messages from everyone
   # load(here::here("R", "sysdata.rda"))
-  load(here::here("data", "data.rda"))
+  # load(here::here("data", "data.rda"))
   # data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
   # data(sysdata, envir = environment())
   # usethis::use_data(data, internal = TRUE)
@@ -32,8 +36,8 @@ hbd_joel <- function(from_who) {
       from_who = from_who
     })
 
-  # hbdjoel::data %>%
-  data %>%
+  hbdjoel::data %>%
+  # data %>%
     filter(name %in% from_who) %>%
     group_by(name) %>%
     # mutate_at("msg", emo::ji_glue) %>%
