@@ -1,7 +1,3 @@
-# .onLoad <- function(libname, pkgname) {
-#   data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
-# }
-
 #' @description turning texts into utf8 code to be printed as emojis.
 emoji_transform = function(text) {
 
@@ -16,26 +12,15 @@ emoji_transform = function(text) {
 #' @return happy birthday message and the author of the message
 #' @examples hbd_joel(from_who = c("liz", "bethany"))
 
-# data = hbdjoel::data
-# load(here::here("data", "data.rda"))
 
 hbd_joel <- function(from_who) {
 
-  # data containing birthday messages from everyone
-  # load(here::here("R", "sysdata.rda"))
-  # load(here::here("data", "data.rda"))
-  # data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
-  # data(sysdata, envir = environment())
-  # usethis::use_data(data, internal = TRUE)
-  # data = hbdjoel::data
-  system.file("extdata", "data.rda", package = "hbdjoel", mustWork = TRUE)
-
   suppressWarnings(
     if(from_who == "everyone" ) {
-      from_who = data$name
+      from_who = hbdjoel::data$name
 
     } else if ( missing(from_who) ) {
-      from_who = sample(data$name, 1)
+      from_who = sample(hbdjoel::data$name, 1)
 
     } else {
       from_who = from_who
@@ -43,10 +28,10 @@ hbd_joel <- function(from_who) {
 
   hbdjoel::data %>%
   # data %>%
-    filter(name %in% from_who) %>%
-    group_by(name) %>%
+    dplyr::filter(name %in% from_who) %>%
+    dplyr::group_by(name) %>%
     # mutate_at("msg", emo::ji_glue) %>%
-    mutate_at("msg", emoji_transform) %>%
+    dplyr::mutate_at("msg", emoji_transform) %>%
     glue::glue_data("{stringr::str_to_title(name)} says {msg}")
 
 }
