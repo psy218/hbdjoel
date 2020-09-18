@@ -7,7 +7,6 @@ emoji_transform = function(text) {
     utf8::utf8_encode()
 }
 
-
 #' @description this function prints out birthday messages for Joel Le Forestier for his 26th birthday.
 #' @param from_who leaving it blank will randomly select a person; possible argument includes: name(s) of birthday message sender; "everyone"
 #' @return happy birthday message and the author of the message
@@ -16,7 +15,8 @@ emoji_transform = function(text) {
 hbd_joel <- function(from_who) {
 
   # data containing birthday messages from everyone
-  load(here::here("R", "sysdata.rda"))
+  # load(here::here("R", "sysdata.rda"))
+  data(sysdata, envir = environment())
 
   suppressWarnings(
     if(from_who == "everyone" ) {
@@ -37,3 +37,7 @@ hbd_joel <- function(from_who) {
     glue::glue_data("{stringr::str_to_title(name)} says {msg}")
 
 }
+
+
+
+
