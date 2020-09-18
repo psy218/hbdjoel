@@ -1,6 +1,6 @@
-.onLoad <- function(libname, pkgname) {
-  data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
-}
+# .onLoad <- function(libname, pkgname) {
+#   data("hbd_joel", "data", package = hbdjoel, envir = parent.env(environment()))
+# }
 
 #' @description turning texts into utf8 code to be printed as emojis.
 emoji_transform = function(text) {
