@@ -3,7 +3,7 @@ Type: Package
 Title: Happy birthday, Joel
 Version: 0.1.0
 Author: sprql
-Maintainer: The package maintainer <https://github.com/psy218/hbdjoel/>
+Maintainer: sue <sue.song@mail.utoronto.ca>
 Description: fancily deliver birthday messages for Joel from people who love Joel
 License: What license is it under?
 Encoding: UTF-8
