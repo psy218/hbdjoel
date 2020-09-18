@@ -1,10 +1,10 @@
 
-# hbdjoel
+# September 25: Birth of Joel Day
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of hbdjoel is to read birthday messages for Joel fancily. 
+The goal of hbdjoel is to *fancily* deliver birthday messages for Joel from people who love Joel. 
 
 ## Installation
 

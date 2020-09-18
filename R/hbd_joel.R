@@ -21,12 +21,10 @@ hbd_joel <- function(from_who) {
 
   data %>%
     filter(name %in% from_who) %>%
-    # filter(name %in% c("sue", "louisa")) %>% # testing testing
     group_by(name) %>%
     mutate_at("msg", emo::ji_glue) %>%
     glue::glue_data("{stringr::str_to_title(name)} says {msg}")
-    # mutate(msg = glue::glue("{stringr::str_to_title(name)} says {msg}")) %>%
-    # pull(msg)
+
 }
 
 
