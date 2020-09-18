@@ -28,7 +28,7 @@ hbd_joel <- function(from_who) {
   # data(sysdata, envir = environment())
   # usethis::use_data(data, internal = TRUE)
   # data = hbdjoel::data
-  system.file("data", package = "hbdjoel")
+  system.file("extdata", "data.rda", package = "hbdjoel", mustWork = TRUE)
 
   suppressWarnings(
     if(from_who == "everyone" ) {
@@ -41,7 +41,7 @@ hbd_joel <- function(from_who) {
       from_who = from_who
     })
 
-  data %>%
+  hbdjoel::data %>%
   # data %>%
     filter(name %in% from_who) %>%
     group_by(name) %>%
@@ -50,3 +50,4 @@ hbd_joel <- function(from_who) {
     glue::glue_data("{stringr::str_to_title(name)} says {msg}")
 
 }
+
