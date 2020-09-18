@@ -16,15 +16,18 @@ devtools::install_github("psy218/hbdjoel")
 
 ## Example
 
-Are you feeling adventurous? Simply run the function with no argument. 
+The function takes in one argument, `from_who`. 
+
+Are you feeling adventurous? Simply run the function with "anyone". 
 
 ``` r
-library(hbdjoel)
-hbd_joel()
+library("hbdjoel")
+hbd_joel(from_who = "anyone")
 ```
-This will randomly sample one birthday wish, and make you feel super risk-taking. 
+This will randomly sample one birthday message, and make you feel super risk-taking. 
 
-Do you have someone in mind, and wonder if they wished you happy birthday? Type their name (in with no capital letter).
+Do you have someone in mind, and wonder if they wished you happy birthday?   
+Type their name! 
 ``` r
 hbd_joel(who = "joel")
 ```

@@ -12,14 +12,16 @@ emoji_transform = function(text) {
 #' @return happy birthday message and the author of the message
 #' @examples hbd_joel(from_who = c("liz", "bethany"))
 
-
 hbd_joel <- function(from_who) {
+
+  # change the name to lower cases if capitalized
+  from_who = tolower(from_who)
 
   suppressWarnings(
     if(from_who == "everyone" ) {
       from_who = hbdjoel::data$name
 
-    } else if ( missing(from_who) ) {
+    } else if ( from_who == "anyone" ) {
       from_who = sample(hbdjoel::data$name, 1)
 
     } else {
@@ -27,10 +29,8 @@ hbd_joel <- function(from_who) {
     })
 
   hbdjoel::data %>%
-  # data %>%
     dplyr::filter(name %in% from_who) %>%
     dplyr::group_by(name) %>%
-    # mutate_at("msg", emo::ji_glue) %>%
     dplyr::mutate_at("msg", emoji_transform) %>%
     glue::glue_data("{stringr::str_to_title(name)} says {msg}")
 
