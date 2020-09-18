@@ -16,7 +16,7 @@ emoji_transform = function(text) {
 #' @return happy birthday message and the author of the message
 #' @examples hbd_joel(from_who = c("liz", "bethany"))
 
-hbd_joel <- function(from_who) {
+hbd_joel <- function(data, from_who) {
 
   # data containing birthday messages from everyone
   # load(here::here("R", "sysdata.rda"))
@@ -36,7 +36,7 @@ hbd_joel <- function(from_who) {
       from_who = from_who
     })
 
-  data = hbdjoel::data
+
 
   # hbdjoel:::data %>%
   data %>%
