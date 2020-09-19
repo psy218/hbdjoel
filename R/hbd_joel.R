@@ -23,18 +23,20 @@ hbd_joel <- function(from_who) {
     } else if ( stringr::str_detect(from_who, "corn")) {
       from_who = ifelse(stringr::str_detect(from_who, "^corn") == TRUE, "bethany", from_who)
 
-    } else if (all( from_who %in% hbdjoel::data$name == FALSE) ) {
+    } else if (any( from_who %in% hbdjoel::data$name == FALSE) ) {
       suggestions = ifelse( stringr::str_detect(from_who, "matt") == TRUE, "matt",
                             ifelse( stringr::str_detect(from_who, "lpg") == TRUE, "liz", "nada"))
 
       if(all(suggestions == "nada")) cat("Did you make up those names?")
-      if(suggestions == "matt") cat("Matt is going to tell you in person\U1F496")
-      if(any(suggestions != "nada" & suggestions != "matt")) cat( paste0("Did you mean ", suggestions[which(suggestions != "nada")], "? Try with ", suggestions[which(suggestions != "nada")]))
+      if(suggestions == "matt") cat("Matt is going to tell you in person\U1F496\n")
+      if(any(suggestions != "nada") & all(suggestions != "matt")) cat( paste0("Did you mean ", suggestions[which(suggestions != "nada")], "? Try with ", suggestions[which(suggestions != "nada")]))
 
-    } else if (any( from_who %in% hbdjoel::data$name == FALSE) ) {
-      cat(paste(toupper(from_who[which(from_who %in% hbdjoel::data$name == FALSE)]), "DOESN'T LOVE YOU\n"))
       from_who = from_who[which(from_who %in% hbdjoel::data$name)]
     }
+    # else if (any( from_who %in% hbdjoel::data$name == FALSE) ) {
+    #   cat(paste(toupper(from_who[which(from_who %in% hbdjoel::data$name == FALSE)]), "DOESN'T LOVE YOU\n"))
+    #   from_who = from_who[which(from_who %in% hbdjoel::data$name)]
+    # }
   )
 
   hbdjoel::data %>%
