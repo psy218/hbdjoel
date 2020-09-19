@@ -3,7 +3,8 @@ emoji_transform = function(text) {
 
   stringr::str_replace_all(text, c("heart" = "\xE2\x9D\xA4",
                                    "celebration" = "\xF0\x9F\x8E\x89",
-                                   "tada" = "\xF0\x9F\x8D\xBB")) %>%
+                                   "tada" = "\xF0\x9F\x8D\xBB",
+                                   "wave" = "\xF0\x9F\x8C\x8A")) %>%
     utf8::utf8_encode()
 }
 
