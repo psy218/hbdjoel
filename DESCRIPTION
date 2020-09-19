@@ -12,7 +12,8 @@ Imports:
     tibble,
     glue,
     dplyr,
-    stringr
+    stringr,
+    utf8
 Depends: 
     R (>= 2.10)
 Suggests: 
