@@ -24,7 +24,6 @@ hbd_joel <- function(from_who) {
     })
 
   hbdjoel::data %>%
-    data %>%
     dplyr::filter(name %in% from_who) %>%
     dplyr::mutate(msg = glue::glue("{stringr::str_to_title(name)} says {msg}")) %>%
     .$msg
