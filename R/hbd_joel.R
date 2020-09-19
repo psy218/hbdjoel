@@ -11,7 +11,8 @@ emoji_transform = function(text) {
   stringr::str_replace_all(text, c("heart" = "\U1F496",
                                    "celebration" = "\U1F389",
                                    "tada" = "\U1F37B",
-                                   "wave" = "\U1F30A")) %>%
+                                   "wave" = "\U1F30A",
+                                   "smile" = "\U1F603")) %>%
     utf8::utf8_print(quote = FALSE)
 
 }
@@ -33,8 +34,12 @@ hbd_joel <- function(from_who) {
     } else if ( from_who == "anyone" ) {
       from_who = sample(hbdjoel::data$name, 1)
 
+    } else if ( from_who %in% hbdjoel::data$name ){
+      from_who = tolower(from_who)
+
     } else {
-      from_who = from_who
+      stop("THIS PERSON DOESN'T LOVE YOU", call. = FALSE)
+      # glue::glue("{from_who} DOESN'T LOVE YOU")
     })
 
   hbdjoel::data %>%
