@@ -32,7 +32,7 @@ hbd_joel <- function(from_who) {
       from_who = from_who
 
     } else if ( stringr::str_detect(from_who, "corn")) {
-      from_who = ifelse(str_detect(from_who, "^corn") == TRUE, "bethany", from_who)
+      from_who = ifelse(stringr::str_detect(from_who, "^corn") == TRUE, "bethany", from_who)
 
     } else if ( length(from_who) == 1 ) {
       stop("THIS PERSON DOESN'T LOVE YOU, or you don't know how to type", call. = FALSE)
