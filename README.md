@@ -1,5 +1,5 @@
 
-# September 25: Birth of Joel Day
+# September 24: Birth of Joel Day
 
 <!-- badges: start -->
 <!-- badges: end -->
