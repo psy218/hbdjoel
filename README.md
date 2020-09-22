@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of hbdjoel is to *fancily* deliver birthday messages from people who love Joel. 
+The goal of hbdjoel is to *fancily* deliver birthday messages to Joel from those who love him. 
 
 ## Installation
 
@@ -33,7 +33,7 @@ hbd_joel(who = "joel")
 ```
 Or, maybe you had multiple people in mind?
 ``` r
-hbd_joel(who = c("joel", "joel_v2"))
+hbd_joel(who = c("joel", "joel v2"))
 ```
 
 Hey, if you need tons of love, try "everyone"
