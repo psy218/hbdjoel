@@ -20,13 +20,13 @@ library("hbdjoel")
 ```
 
 ## Example
-To start off, let's quiz your knowledge about your loved ones! 
-The following code will read a birthday wish from one of people and give you one chance to guess who sent the message.   
+To start off, let's quiz your knowledge about your friends and colleagues!      
+`guess_who()` will print a birthday wish from one of people, and give you one chance to guess who may have sent the message.   
 ``` r
 guess_who()
 ```
 
-You can continue quizzing yourself, but if you are frustrated run `hbd_joel()` with an argument for `from_who`. 
+Or, run `hbd_joel()` with a `from_who` argument. 
 If you are feeling adventurous, run the function with "anyone". 
 ``` r
 hbd_joel(from_who = "anyone")
