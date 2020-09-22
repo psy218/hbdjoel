@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of hbdjoel is to *fancily* deliver birthday messages for Joel from people who love Joel. 
+The goal of hbdjoel is to *fancily* deliver birthday messages from people who love Joel. 
 
 ## Installation
 
@@ -26,8 +26,8 @@ hbd_joel(from_who = "anyone")
 ```
 This will randomly sample one birthday message, and make you feel super risk-taking. 
 
-Do you have someone in mind, and wonder if they wished you happy birthday?   
-Type their name! 
+Do you have someone in mind, and wonder if they wished Joel happy birthday?   
+Type their name!  
 ``` r
 hbd_joel(who = "joel")
 ```
