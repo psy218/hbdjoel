@@ -14,14 +14,21 @@ You can install the released version of hbdjoel from [hbdjoel](https://github/ps
 devtools::install_github("psy218/hbdjoel")
 ```
 
-## Example
-
-The function takes in one argument, `from_who`. 
-
-Are you feeling adventurous? Simply run the function with "anyone". 
-
+Load the package. 
 ``` r
 library("hbdjoel")
+```
+
+## Example
+To start off, let's quiz your knowledge about your loved ones! 
+The following code will read a birthday wish from one of people and give you one chance to guess who sent the message.   
+``` r
+guess_who()
+```
+
+You can continue quizzing yourself, but if you are frustrated run `hbd_joel()` with an argument for `from_who`. 
+If you are feeling adventurous, run the function with "anyone". 
+``` r
 hbd_joel(from_who = "anyone")
 ```
 This will randomly sample one birthday message, and make you feel super risk-taking. 
@@ -31,7 +38,7 @@ Type their name!
 ``` r
 hbd_joel(who = "joel")
 ```
-Or, maybe you had multiple people in mind?
+Or, maybe you have multiple people in mind:
 ``` r
 hbd_joel(who = c("joel", "joel v2"))
 ```
