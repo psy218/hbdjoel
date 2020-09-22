@@ -5,10 +5,22 @@
 
 hbd_joel <- function(from_who) {
 
-  # change the name to lower cases if capitalized
+  # joel's nicknames for people
+  nicknames = c("jacqueline" = "jackie",
+                "susan" = "sue",
+                "^corn\\D+" = "bethany",
+                "mariah" = "maria",
+                "^will\\D+" = "will",
+                "lpg" = "liz")
 
-  from_who = tolower(from_who)
-  if(any( stringr::str_detect(from_who, "corn") == TRUE)) cat("SHE'S NOT FROM IOWA\n")
+  # change the name to lower cases if capitalized & replace nicknames with real names
+  from_who = stringr::str_replace_all(tolower(from_who), nicknames)
+
+  # custom message for Matt
+  if(any( stringr::str_detect(from_who, "matt") == TRUE)) cat("Matt is going to tell you in person\U1F496\n")
+
+  # corn prompts for Bethany
+  if(any( stringr::str_detect(from_who, "corn") == TRUE)) cat("BETHANY AIN'T EVEN FROM IOWA\n")
 
   suppressWarnings(
     if( length(from_who) == 1 & from_who == "everyone" ) {
@@ -17,23 +29,20 @@ hbd_joel <- function(from_who) {
     } else if ( length(from_who) == 1 & from_who == "anyone" ) {
       from_who = sample(hbdjoel::data$name, 1)
 
-    } else if ( from_who %in% hbdjoel::data$name ){
-      from_who = from_who
+    # } else if ( any( from_who %in% hbdjoel::data$name == FALSE ) ) {
+    } else {
 
-    } else if ( stringr::str_detect(from_who, "corn")) {
-      from_who = ifelse(stringr::str_detect(from_who, "^corn") == TRUE, "bethany", from_who)
+      # find names of senders not in the data
+      unknown_senders = ifelse(from_who %in% c(hbdjoel::data$name, "matt"), NA, from_who)
+      unknown_senders = unknown_senders[!is.na(unknown_senders)] # drop NA
 
-    } else if (any( from_who %in% hbdjoel::data$name == FALSE) ) {
+      cat("Who",
+          paste(ifelse(length(unknown_senders) == 1, "is", "are")),
+          paste(unknown_senders, collapse = ", "), "?\n")
 
-      suggestions = ifelse( stringr::str_detect(from_who, "matt") == TRUE, "matt",
-                            ifelse( stringr::str_detect(from_who, "lpg") == TRUE, "liz", "nada"))
+      from_who = from_who[which(from_who %in% c( hbdjoel::data$name, names(nicknames)))]
+      }
 
-      if(all(suggestions == "nada")) cat("Did you make up those names?")
-      if(suggestions == "matt") cat("Matt is going to tell you in person\U1F496\n")
-      if(suggestions == "liz") cat("Did you mean Liz?")
-
-      from_who = from_who[which(from_who %in% hbdjoel::data$name)]
-    }
   )
 
   hbdjoel::data %>%
