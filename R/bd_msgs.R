@@ -12,7 +12,7 @@ data = tibble::tribble(
   "jordana","HAPPY BIRTHDAY JOEL THE THIRD!!! Writing a birthday message in an R function is the most Joel thing I’ve ever seen but I am here for it. I hope you have a fabulous birthday!!",
   "bethany","HAPPY BIRTHDAY, JOEL!!! I hope you have a WONDERFUL birthday and are able to spend it doing something ICONIC to properly reflect your TIER-ONE AMAZINGNESS! Thank you for being so wonderful, so extra, so shady, so brilliant, and such a good friend. HAPPY BIRTHDAY! xoxo the corn queen",
   "liz",  "Happy birthday Joel! Every life that you touch is a little better than before you met. I hope you have a meaningful and delightful birthday, because I love your existence! \U1F496",
-  "steph", "HAPPY BIRTHDAY JOEL!!!!! \U1F389 \U1F496 \U1F37B You’re so awesome and kind and generous, and you deserve to have THE BEST DAY EVER!",
+  "stephanie", "HAPPY BIRTHDAY JOEL!!!!! \U1F389 \U1F496 \U1F37B You’re so awesome and kind and generous, and you deserve to have THE BEST DAY EVER!",
   "jackie", "\U1F496 \U1F389 \U1F496 HAPPY BIRTHDAY, JOEL! \U1F496 \U1F389 \U1F496  Gone are the days when you were not born! In this SPRQLing era of Joel, we rejoice!! But actually, because YOU are the absolute BEST! I’m so thankful, and joyful, and full of pride to have you as a labmate, collaborator, and friend. I wish you joy, flow, peace, and walks by the water for this year. \U1F30A \U1F30A \U1F30A",
   "francine", "Wishing you a wonderful birthday full of love and laughter"
 )
