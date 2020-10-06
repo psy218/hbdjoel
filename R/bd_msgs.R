@@ -1,7 +1,7 @@
 # raw messages for joel's birthday
 data = tibble::tribble(
   ~name,  ~msg,
-  "shelly","Have a great and wonderful birthday, Joel! You rock!",
+  "sophia","Have a great and wonderful birthday, Joel! You rock!",
   "will", "BIRTHDAY BIRTHDAY BIRTHDAY BIRTHDAY HAPPY YAYAYAYA",
   "sue",  "Joel, you are a SSHRC Scholar, a (soon-to-be) father of Bon Bon, a connoisseur of Whiskey Sour, a solar-powered human emitting positive energy and so fucking much life. But more than that, you are the best labmate and friend anyone can ask for. I am grateful I have you in my life, and thank you for existing. Happy birthday \U1F496",
   "louisa",  "HAPPY BIRTHDAY JOEL!! \U1F389 May your day of birth be full of dessert and happiness and hopefully we can all celebrate in person together soon! Congratulations on another trip around the sun!!!",
